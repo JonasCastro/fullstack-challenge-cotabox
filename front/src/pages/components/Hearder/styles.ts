@@ -3,25 +3,14 @@ import { shade } from 'polished';
 
 export const Container = styled.div`
   background: #00b8e2;
-  padding: 40px 0;
+  padding: 50px 0;
 
   form {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 
-    input {
-      height: 50px;
-      padding: 0 24px;
-      border: 0;
-      border-radius: 5px;
-      color: #3a3a3a;
-      margin-right: 16px;
-
-      &::placeholder {
-        color: #a8a8b3;
-      }
-    }
     button {
       height: 50px;
       width: 190px;
@@ -29,6 +18,7 @@ export const Container = styled.div`
       border-radius: 5px;
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
       border: 0;
+      margin: 0 16px 10px 0;
       color: #fff;
       font-weight: bold;
       transition: background-color 0.2s;
@@ -37,4 +27,12 @@ export const Container = styled.div`
       }
     }
   }
+`;
+
+export const BoxInput = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 0;
 `;
