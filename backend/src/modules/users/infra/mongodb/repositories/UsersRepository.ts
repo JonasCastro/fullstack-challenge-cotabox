@@ -1,6 +1,6 @@
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
+import { Types } from 'mongoose';
 import User, { IUser } from '../entities/User';
-
 import IUsersRepository from '../../../repositories/IUsersRepository';
 
 class UsersRepository implements IUsersRepository {
@@ -17,6 +17,9 @@ class UsersRepository implements IUsersRepository {
   }
 
   public async delete(id: string): Promise<IUser | null> {
+    if (!Types.ObjectId.isValid(id)) {
+      return null;
+    }
     const user = await User.findByIdAndDelete(id);
 
     return user;
