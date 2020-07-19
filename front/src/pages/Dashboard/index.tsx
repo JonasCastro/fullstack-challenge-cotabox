@@ -7,7 +7,7 @@ import { getInfoGraphi, options } from '../../utils/getConfigChartjs';
 
 import { useUser } from '../../hooks/users';
 
-import { Container, Content, GraphiContent } from './styles';
+import { Container, Content } from './styles';
 
 const Dashboard: React.FC = () => {
   const { users } = useUser();
@@ -19,12 +19,16 @@ const Dashboard: React.FC = () => {
       <Container>
         <h1>Data</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <Content>
-          <Table />
-          <GraphiContent>
-            <Doughnut data={data} options={options} />
-          </GraphiContent>
-        </Content>
+        {users.length ? (
+          <Content>
+            <Table />
+            <div>
+              <Doughnut data={data} options={options} />
+            </div>
+          </Content>
+        ) : (
+          <p>Hello. Register a user!</p>
+        )}
       </Container>
     </>
   );

@@ -12,7 +12,7 @@ export const Container = styled.div`
   }
   p {
     color: #2b2e3b;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
   }
 `;
 export const Content = styled.div`
@@ -22,8 +22,4 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   grid-gap: 20px;
-`;
-
-export const GraphiContent = styled.div`
-  padding-top: 30px;
 `;
