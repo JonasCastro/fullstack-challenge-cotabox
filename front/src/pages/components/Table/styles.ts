@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
 export const TableContainer = styled.section`
-  margin-top: 14px;
-  flex: 1;
-
+  min-width: 60%;
+  margin-bottom: 30px;
   table {
-    width: 100%;
     border-spacing: 0 8px;
 
     th {
@@ -36,6 +34,7 @@ export const TableContainer = styled.section`
     }
     td:last-child {
       border-radius: 0 8px 8px 0;
+      width: 5px;
       text-align: center;
     }
   }

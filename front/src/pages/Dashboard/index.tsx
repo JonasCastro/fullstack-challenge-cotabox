@@ -22,7 +22,7 @@ const Dashboard: React.FC = () => {
         <Content>
           <Table />
           <GraphiContent>
-            <Doughnut data={data} height={300} options={options} />
+            <Doughnut data={data} options={options} />
           </GraphiContent>
         </Content>
       </Container>

@@ -31,6 +31,7 @@ export function getInfoGraphi(users: IUserFormData[]): IInfoGraphi {
 }
 
 export const options = {
+  responsive: true,
   legend: {
     display: true,
     position: 'right',
@@ -45,6 +46,9 @@ export const options = {
       bottom: 0,
       top: 0,
     },
+  },
+  tooltips: {
+    enabled: true,
   },
   maintainAspectRatio: false,
 };

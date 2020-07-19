@@ -1,122 +1,12 @@
 import React from 'react';
+import { FiTrash2 } from 'react-icons/fi';
 
 import { useUser } from '../../../hooks/users';
 
 import { TableContainer } from './styles';
 
-// const datas = [
-//   {
-//     id: 1,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 2,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 3,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 4,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 5,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 6,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 1,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 2,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 3,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 4,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 5,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 6,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 1,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 2,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 3,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 4,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 5,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-//   {
-//     id: 6,
-//     firstName: 'Jonas',
-//     lastName: 'Castro',
-//     participation: '50',
-//   },
-// ];
-
 const Table: React.FC = () => {
-  const { users } = useUser();
+  const { users, removeUser } = useUser();
   return (
     <TableContainer>
       <table>
@@ -126,6 +16,7 @@ const Table: React.FC = () => {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Participation</th>
+            <th>Action</th>
           </tr>
         </thead>
 
@@ -136,6 +27,13 @@ const Table: React.FC = () => {
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
               <td>{`${user.participation}%`}</td>
+              <td>
+                <FiTrash2
+                  size={20}
+                  color="#c53030"
+                  onClick={() => removeUser(1)}
+                />
+              </td>
             </tr>
           ))}
         </tbody>
