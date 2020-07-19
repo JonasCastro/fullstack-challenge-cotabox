@@ -8,15 +8,22 @@ export const Container = styled.div`
 
   h1 {
     margin: 20px 0 5px 0;
+    color: #20232c;
   }
   p {
-    color: #6b7394;
+    color: #2b2e3b;
   }
 `;
 export const Content = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  flex-wrap: wrap;
+
   width: 100%;
   padding: 30px 50px;
+`;
+
+export const GraphiContent = styled.div`
+  min-width: 30%;
 `;

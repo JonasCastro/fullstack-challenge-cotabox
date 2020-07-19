@@ -2,12 +2,124 @@ import React from 'react';
 
 import { TableContainer } from './styles';
 
+const datas = [
+  {
+    id: 1,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 2,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 3,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 4,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 5,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 6,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 1,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 2,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 3,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 4,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 5,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 6,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 1,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 2,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 3,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 4,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 5,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+  {
+    id: 6,
+    firstName: 'Jonas',
+    lastName: 'Castro',
+    participation: '50',
+  },
+];
+
 const Table: React.FC = () => {
   return (
     <TableContainer>
       <table>
         <thead>
           <tr>
+            <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Participation</th>
@@ -15,51 +127,14 @@ const Table: React.FC = () => {
         </thead>
 
         <tbody>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>5%</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>20%</td>
-          </tr>
-          <tr>
-            <td>Ernst Handel</td>
-            <td>Roland Mendel</td>
-            <td>10%</td>
-          </tr>
-          <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-            <td>30%</td>
-          </tr>
-          <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Yoshi Tannamuri</td>
-            <td>40%</td>
-          </tr>
-          <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Giovanni Rovelli</td>
-            <td>8%</td>
-          </tr>
-          {/* {transactions.map(transaction => (
-                <tr key={transaction.id}>
-                  <td className="title">{transaction.title}</td>
-                  <td className="income">
-                    {transaction.type === 'outcome' && ' - '}
-                    {formatValue(transaction.value)}
-                  </td>
-                  <td>{transaction.category.title}</td>
-                  <td>
-                    {new Date(transaction.created_at).toLocaleDateString(
-                      'pt-br',
-                    )}
-                  </td>
-                </tr>
-              ))} */}
+          {datas.map((data, indice) => (
+            <tr key={data.id}>
+              <td>{indice + 1}</td>
+              <td>{data.firstName}</td>
+              <td>{data.lastName}</td>
+              <td>{`${data.participation}%`}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </TableContainer>

@@ -1,9 +1,11 @@
 import React from 'react';
+import { Doughnut } from 'react-chartjs-2';
 
 import Header from '../components/Hearder';
 import Table from '../components/Table';
+import { data, options } from '../../utils/getConfigChartjs';
 
-import { Container, Content } from './styles';
+import { Container, Content, GraphiContent } from './styles';
 
 const Dashboard: React.FC = () => {
   return (
@@ -14,7 +16,9 @@ const Dashboard: React.FC = () => {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <Content>
           <Table />
-          <h1>Gráfico</h1>
+          <GraphiContent>
+            <Doughnut data={data} height={300} options={options} />
+          </GraphiContent>
         </Content>
       </Container>
     </>
