@@ -6,48 +6,54 @@ import * as Yup from 'yup';
 import getValidationErrors from '../../../utils/getValidationErrors';
 import Input from '../Input';
 
-import { Container, BoxInput } from './styles';
+import { useUser, IUserFormData } from '../../../hooks/users';
 
-interface IFormData {
-  fistName: string;
-  lastName: string;
-  participation: string;
-}
+import { Container, BoxInput } from './styles';
 
 const Hearder: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const { createUser } = useUser();
 
-  const handleSubmit = useCallback(async (data: IFormData): Promise<void> => {
-    try {
-      formRef.current?.setErrors({});
-      const schema = Yup.object().shape({
-        fistName: Yup.string().required('Fist name is required'),
-        lastName: Yup.string().required('Last name is required'),
-        participation: Yup.string().required('Participation is required'),
-      });
+  const handleSubmit = useCallback(
+    async (data: IUserFormData, { reset }): Promise<void> => {
+      try {
+        formRef.current?.setErrors({});
+        const schema = Yup.object().shape({
+          firstName: Yup.string().required('Fist name is required'),
+          lastName: Yup.string().required('Last name is required'),
+          participation: Yup.number()
+            // .integer('Apenas inteiro')
+            .required('Participation is required'),
+        });
 
-      await schema.validate(data, {
-        abortEarly: false,
-      });
+        await schema.validate(data, {
+          abortEarly: false,
+        });
 
-      // POST API
-      console.log(data);
-    } catch (error) {
-      if (error instanceof Yup.ValidationError) {
-        const errors = getValidationErrors(error);
+        createUser(data);
+        reset();
+      } catch (error) {
+        if (error instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(error);
 
-        formRef.current?.setErrors(errors);
+          formRef.current?.setErrors(errors);
+        }
       }
-    }
-  }, []);
+    },
+    [createUser],
+  );
 
   return (
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
         <BoxInput>
-          <Input name="fistName" type="text" placeholder="First name" />
+          <Input name="firstName" type="text" placeholder="First name" />
           <Input name="lastName" type="text" placeholder="Last name" />
-          <Input name="participation" type="text" placeholder="Participation" />
+          <Input
+            name="participation"
+            type="number"
+            placeholder="Participation"
+          />
         </BoxInput>
         <button type="submit">Send</button>
       </Form>

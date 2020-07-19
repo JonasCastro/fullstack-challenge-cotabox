@@ -3,11 +3,16 @@ import { Doughnut } from 'react-chartjs-2';
 
 import Header from '../components/Hearder';
 import Table from '../components/Table';
-import { data, options } from '../../utils/getConfigChartjs';
+import { getInfoGraphi, options } from '../../utils/getConfigChartjs';
+
+import { useUser } from '../../hooks/users';
 
 import { Container, Content, GraphiContent } from './styles';
 
 const Dashboard: React.FC = () => {
+  const { users } = useUser();
+  const data = getInfoGraphi(users);
+
   return (
     <>
       <Header />

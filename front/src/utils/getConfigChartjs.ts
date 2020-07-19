@@ -1,13 +1,34 @@
-export const data = {
-  labels: ['Red', 'Green', 'Yellow'],
-  datasets: [
-    {
-      data: [300, 50, 100],
-      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-    },
-  ],
-};
+import { IUserFormData } from '../hooks/users';
+
+interface IDatasets {
+  data: number[];
+  backgroundColor: string[];
+  hoverBackgroundColor: string[];
+}
+
+interface IInfoGraphi {
+  labels: string[];
+  datasets: IDatasets[];
+}
+
+export function getInfoGraphi(users: IUserFormData[]): IInfoGraphi {
+  const infoGraphi: IInfoGraphi = {
+    labels: [],
+    datasets: [
+      {
+        data: [],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+      },
+    ],
+  };
+
+  users.forEach(user => {
+    infoGraphi.labels.push(user.firstName);
+    infoGraphi.datasets[0].data.push(user.participation);
+  });
+  return infoGraphi;
+}
 
 export const options = {
   legend: {
