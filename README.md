@@ -100,7 +100,7 @@ $ yarn dev:server
 
 # O servidor inciará na porta:3333
 
-# Para executar os teste
+# Para executar os testes
 $ yarn test
 
 ```
@@ -128,8 +128,17 @@ $ yarn start
 #### 💉 Testes da aplicação
 
 ```bash
-# Para executar os teste
+
+# Vá para a pasta backend
+$ cd backend
+
+# Instale as dependências
+$ yarn
+
+# Para executar os testes
 $ yarn test
+
+#Obs: Abra o arquivo ./backend/coverage/lcov-report/index.html no navegador para acompanhar o relatório de testes.
 
 ```
 Testes Backend
@@ -175,17 +184,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 > Veja o arquivo  [package.json](https://github.com/jonasCastro/fullstack-challenge-cotabox/blob/master/backend/package.json)
 
-#### [](https://github.com/tgmarinho/Ecoleta#utilit%C3%A1rios)**Utilitários**
+#### [](https://github.com/jonascastro/fullstack-challenge-cotabox#utilit%C3%A1rios)**Utilitários**
 
-
-💡 Sugestão editor para trabalhar com o código: 
-  - [VSCode](https://code.visualstudio.com/)
-    - [EditorConfig](https://editorconfig.org/)
-    - [ESLint](https://eslint.org/)
 
 -   Gráficos:  **[ChartJS](https://www.chartjs.org/)**
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**  → Extensions:  **[ESlintJS](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)**, **[EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)**
 -   Markdown:  **[StackEdit](https://stackedit.io/)**,  **[Markdown Emoji](https://gist.github.com/rxaviers/7360908)**
+-   README Template:  **[README-ecoleta](https://github.com/tgmarinho/README-ecoleta/blob/master/README.md)**
 -   Teste de API:  **[Insomnia](https://insomnia.rest/)**
 -   Ícones:  **[Feather Icons](https://feathericons.com/)**
 -   Fontes:  **[Roboto](https://fonts.google.com/specimen/Roboto)**
