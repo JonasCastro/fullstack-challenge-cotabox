@@ -1,18 +1,21 @@
 import { Types } from 'mongoose';
-
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
-import User, { IUser } from '../entities/User';
+
+import User, { IUser } from '../../infra/mongodb/entities/User';
 
 class UsersRepository implements IUsersRepository {
-  public async find(): Promise<IUser[]> {
-    const user = await User.find();
+  private users: IUser[] = [];
 
-    return user;
+  public async find(): Promise<IUser[]> {
+    return this.users;
   }
 
   public async create(userData: ICreateUserDTO): Promise<IUser> {
-    const user = await User.create(userData);
+    const user = new User();
+    const id = Types.ObjectId();
+    Object.assign(user, { id, ...userData });
+    this.users.push(user);
 
     return user;
   }
@@ -21,7 +24,14 @@ class UsersRepository implements IUsersRepository {
     if (!Types.ObjectId.isValid(id)) {
       return null;
     }
-    const user = await User.findByIdAndDelete(id);
+
+    const indexUser = this.users.findIndex(user => user.id === id);
+
+    if (indexUser === -1) return null;
+
+    const user = this.users[indexUser];
+
+    this.users.splice(indexUser, 1);
 
     return user;
   }

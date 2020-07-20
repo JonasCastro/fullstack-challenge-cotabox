@@ -1,11 +1,10 @@
 import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppErros';
-import { IUser } from '../infra/mongodb/entities/User';
-
-import IUsersRepository from '../repositories/IUsersRepository';
+import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 
 import ICreateUserDTO from '../dtos/ICreateUserDTO';
+import { IUser } from '../infra/mongodb/entities/User';
 
 @injectable()
 class UserService {
