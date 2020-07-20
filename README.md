@@ -1,5 +1,5 @@
 <h1 align="center">
-  Manage Participation
+  Manage Participations
 </h1>
 
 <p align="center">
@@ -23,7 +23,7 @@
 </p>
 
 <h4 align="center"> 
-	🚧  Manage Participation 📊 Concluído ✅ 🚧
+	🚧  Manage Participations 📊 Concluído ✅ 🚧
 </h4>
 
 <p align="center">
@@ -32,7 +32,6 @@
  <a href="#-layout">Layout</a> • 
  <a href="#-como-executar-o-projeto">Como executar</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-contribuidores">Contribuidores</a> • 
  <a href="#-autor">Autor</a> • 
  <a href="#user-content--licença">Licença</a>
 </p>
@@ -40,7 +39,8 @@
 
 ## 💻 Sobre o projeto
 
-📊 Manage Participation - tem como objetivo registrar participantes e o seu percentual de participação.  
+:bar_chart: Manage Participations - tem como objetivo registrar participantes e seu percentual de participação representando essa distribuição em um gráfico de pizza.
+
 ---
 
 ## ⚙️ Funcionalidades
@@ -170,13 +170,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ---
 
 
-## :man: Autor
+## Autor
 
- <br />
- <sub><b>Jonas Castro</b></sub></a> <a href="https://www.linkedin.com/in/jonas-castro-b4044111a/" title="Jonas">🚀</a>
- <br />
+Jonas Castro
 
-[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jonas-castro-b4044111a/)](https://www.linkedin.com/in/jonas-castro-b4044111a/) 
+[![Linkedin Badge](https://img.shields.io/badge/-Jonas-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jonas-castro-b4044111a/)](https://www.linkedin.com/in/jonas-castro-b4044111a/) 
 
 [![Gmail Badge](https://img.shields.io/badge/-jonascastro128@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jonascastro128@gmail.com)](mailto:jonascastro128@gmail.com)
 
