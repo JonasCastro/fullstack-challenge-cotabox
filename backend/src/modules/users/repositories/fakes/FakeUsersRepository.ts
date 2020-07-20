@@ -25,12 +25,10 @@ class UsersRepository implements IUsersRepository {
       return null;
     }
 
-    const indexUser = this.users.findIndex(user => user.id === id);
-
+    const indexUser = this.users.findIndex(user => user._id === id);
     if (indexUser === -1) return null;
 
     const user = this.users[indexUser];
-
     this.users.splice(indexUser, 1);
 
     return user;
