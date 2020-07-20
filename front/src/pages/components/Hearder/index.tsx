@@ -22,7 +22,8 @@ const Hearder: React.FC = () => {
           firstName: Yup.string().required('Fist name is required'),
           lastName: Yup.string().required('Last name is required'),
           participation: Yup.number()
-            // .integer('Apenas inteiro')
+            .typeError('Must be a number')
+            .positive('Must be greater than zero')
             .required('Participation is required'),
         });
 

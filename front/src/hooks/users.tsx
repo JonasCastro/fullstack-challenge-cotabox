@@ -1,6 +1,14 @@
-import React, { createContext, useState, useCallback, useContext } from 'react';
+import React, {
+  createContext,
+  useState,
+  useCallback,
+  useContext,
+  useEffect,
+} from 'react';
+import api from '../services/api';
 
 export interface IUserFormData {
+  _id: string;
   firstName: string;
   lastName: string;
   participation: number;
@@ -8,8 +16,8 @@ export interface IUserFormData {
 
 interface UserContextData {
   users: IUserFormData[];
-  createUser(data: Omit<IUserFormData, 'id'>): void;
-  removeUser(id: number): void;
+  createUser(data: Omit<IUserFormData, '_id'>): void;
+  removeUser(_id: string): void;
 }
 
 const UserContext = createContext<UserContextData>({} as UserContextData);
@@ -17,18 +25,31 @@ const UserContext = createContext<UserContextData>({} as UserContextData);
 const UserProvider: React.FC = ({ children }) => {
   const [users, setUsers] = useState<IUserFormData[]>([]);
 
+  useEffect(() => {
+    api.get('/users').then(response => {
+      setUsers(response.data);
+    });
+  }, []);
+
   const createUser = useCallback(
-    ({ firstName, lastName, participation }: Omit<IUserFormData, 'id'>) => {
+    async ({
+      firstName,
+      lastName,
+      participation,
+    }: Omit<IUserFormData, '_id'>) => {
       const user = { firstName, lastName, participation };
-      setUsers(state => [...state, user]);
+
+      const response = await api.post('/users', user);
+
+      setUsers(state => [...state, response.data]);
     },
     [],
   );
 
-  const removeUser = useCallback((id: number) => {
-    console.log(id);
+  const removeUser = useCallback(async (_id: string) => {
+    await api.delete(`/users/${_id}`);
 
-    // setUsers(state => state.filter(user => user.id !== id));
+    setUsers(state => state.filter(user => user._id !== _id));
   }, []);
 
   return (

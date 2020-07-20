@@ -36,11 +36,11 @@ class UserService {
 
   async delete(id: string): Promise<IUser> {
     const user = await this.usersRepository.delete(id);
-    console.log(user);
 
     if (!user) {
       throw new AppError('Users not found.');
     }
+
     return user;
   }
 }

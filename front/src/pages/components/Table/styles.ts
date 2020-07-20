@@ -39,3 +39,14 @@ export const TableContainer = styled.section`
     }
   }
 `;
+
+export const Button = styled.button`
+  background: transparent;
+  border: 0;
+  padding: 5px;
+  &:hover {
+    svg {
+      width: 30px;
+    }
+  }
+`;

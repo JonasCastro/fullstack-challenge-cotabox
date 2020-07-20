@@ -3,7 +3,7 @@ import { FiTrash2 } from 'react-icons/fi';
 
 import { useUser } from '../../../hooks/users';
 
-import { TableContainer } from './styles';
+import { TableContainer, Button } from './styles';
 
 const Table: React.FC = () => {
   const { users, removeUser } = useUser();
@@ -22,17 +22,15 @@ const Table: React.FC = () => {
 
         <tbody>
           {users.map((user, indice) => (
-            <tr>
+            <tr key={user._id}>
               <td>{indice + 1}</td>
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
               <td>{`${user.participation}%`}</td>
               <td>
-                <FiTrash2
-                  size={20}
-                  color="#c53030"
-                  onClick={() => removeUser(1)}
-                />
+                <Button type="button" onClick={() => removeUser(user._id)}>
+                  <FiTrash2 size={20} color="#c53030" />
+                </Button>
               </td>
             </tr>
           ))}

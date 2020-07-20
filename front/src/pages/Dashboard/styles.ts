@@ -23,3 +23,14 @@ export const Content = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   grid-gap: 20px;
 `;
+
+export const Message = styled.div`
+  padding: 20px;
+  background-color: #ff9800;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+
+  border-radius: 4px;
+  font-weight: 500;
+`;
