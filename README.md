@@ -27,15 +27,14 @@
 </h4>
 
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-layout">Layout</a> • 
- <a href="#-como-executar-o-projeto">Como executar</a> • 
- <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-autor">Autor</a> • 
- <a href="#user-content--licença">Licença</a>
+ <a href="#-sobre-o-projeto">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#wrench-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-como-executar-o-projeto">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#autor">Autor</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#memo-licença">Licença</a>
 </p>
-
 
 ## 💻 Sobre o projeto
 
@@ -43,7 +42,8 @@
 
 ---
 
-## ⚙️ Funcionalidades
+
+## :wrench: Funcionalidades
 
 - [x] É possível registrar participantes na plataforma web enviando:
   - [x] primeiro nome do participante
@@ -73,8 +73,7 @@ Este projeto é divido em duas partes:
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [MongoDB](https://www.mongodb.com/).
 
-
-#### 🎲 Rodando o Backend (servidor)
+### Primeiro Passo
 
 ```bash
 
@@ -83,6 +82,12 @@ $ git clone https://github.com/JonasCastro/fullstack-challenge-cotabox.git
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd fullstack-challenge-cotabox
+
+```
+
+#### 🎲 Rodando o Backend (servidor)
+
+```bash
 
 # Vá para a pasta backend
 $ cd backend
@@ -94,6 +99,9 @@ $ yarn
 $ yarn dev:server
 
 # O servidor inciará na porta:3333
+
+# Para executar os teste
+$ yarn test
 
 ```
 <p align="center">
@@ -117,6 +125,22 @@ $ yarn start
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 
 ```
+#### 💉 Testes da aplicação
+
+```bash
+# Para executar os teste
+$ yarn test
+
+```
+Testes Backend
+
+- **`should be able to list the users`**: A aplicação deve permitir que seja retornado um array com todos os participantes que foram criados até o momento.
+
+- **`should be able to create a new user`**: A aplicação deve permitir que um participante seja criado.
+
+- **`should be able to delete the user`**:  A aplicação deve permitir que um participante seja deletado.
+
+- **`should not be able to delete a user that does not exist`**: A aplicação não deve poder excluir um participante que não existe. Caso não exista, retornar um erro com status `400`.
 
 ---
 
@@ -180,9 +204,9 @@ Jonas Castro
 
 ---
 
-## 📝 Licença
+## :memo: Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-
-- Feito com :blue_heart: por Jonas Castro :wave: [Entre em contato!](https://www.linkedin.com/in/jonas-castro-b4044111a/)
+---
+Feito com :blue_heart: por Jonas Castro :wave: [Entre em contato!](https://www.linkedin.com/in/jonas-castro-b4044111a/)
