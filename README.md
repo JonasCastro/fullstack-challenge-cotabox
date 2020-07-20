@@ -55,7 +55,7 @@
 ## 🎨 Layout
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="Demo" title="#Demo" src="./assets/demo.gif" width="400px">
+  <img alt="Demo" title="#Demo" src="./assets/demo.gif" width="900px">
 </p>
 
 ---
@@ -105,7 +105,7 @@ $ yarn test
 
 ```
 <p align="center">
-  <a href="https://github.com/JonasCastro/fullstack-challenge-cotabox/assets/insomnia_API.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+  <a href="https://github.com/JonasCastro/fullstack-challenge-cotabox/tree/master/assets" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
 
 
