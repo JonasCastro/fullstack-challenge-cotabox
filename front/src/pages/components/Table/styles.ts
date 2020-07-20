@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const TableContainer = styled.section`
   min-width: 60%;
   margin-bottom: 30px;
+  overflow-x: auto;
   table {
     border-spacing: 0 8px;
 
